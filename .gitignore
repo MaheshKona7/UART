@@ -1,0 +1,10 @@
+# Simulation build artifacts
+*.vvp
+*.vcd
+simulation/*.vvp
+simulation/*.vcd
+
+# OS / Temporary files
+.DS_Store
+Thumbs.db
+*.log
