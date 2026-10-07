@@ -8,3 +8,7 @@ simulation/*.vcd
 .DS_Store
 Thumbs.db
 *.log
+
+# Documentation & Guide files
+docs/
+
