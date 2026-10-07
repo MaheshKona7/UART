@@ -115,4 +115,4 @@ Signals to observe:
   - Test 2 (`0xC7` receive) -> PASSED
   - Test 3 (40ns Glitch filter check) -> PASSED
   - Test 4 (Frame error check) -> PASSED
-- **`tb_uart_top`**: Transmitted string `'HELLO'` (`0x48`, `0x45`, `0x4C`, `0x4C`, `0x4F`) through loopback. All 5 bytes matched 100%.
+- **`tb_uart_top`**: Transmitted string `'MAHESH'` (`0x4D`, `0x41`, `0x48`, `0x45`, `0x53`, `0x48`) through loopback. All 6 bytes matched 100%.

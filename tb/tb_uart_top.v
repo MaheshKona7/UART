@@ -48,7 +48,7 @@ module tb_uart_top;
     always #(CLK_PERIOD / 2) clk = ~clk;
 
     // Test Data Buffer
-    reg [7:0] test_packets [0:4];
+    reg [7:0] test_packets [0:5];
     integer i;
 
     initial begin
@@ -59,11 +59,12 @@ module tb_uart_top;
         loopback_en = 1'b1; // Enable internal loopback mode
         rx_pin      = 1'b1;
 
-        test_packets[0] = 8'h48; // 'H'
-        test_packets[1] = 8'h45; // 'E'
-        test_packets[2] = 8'h4C; // 'L'
-        test_packets[3] = 8'h4C; // 'L'
-        test_packets[4] = 8'h4F; // 'O'
+        test_packets[0] = 8'h4D; // 'M'
+        test_packets[1] = 8'h41; // 'A'
+        test_packets[2] = 8'h48; // 'H'
+        test_packets[3] = 8'h45; // 'E'
+        test_packets[4] = 8'h53; // 'S'
+        test_packets[5] = 8'h48; // 'H'
 
         // Apply Reset
         #100;
@@ -74,7 +75,7 @@ module tb_uart_top;
         $display("   STARTING SYSTEM LOOPBACK TESTBENCH (UART TOP) ");
         $display("==================================================");
 
-        for (i = 0; i < 5; i = i + 1) begin
+        for (i = 0; i < 6; i = i + 1) begin
             $display("[LOOPBACK TEST] Transmitting Data: 0x%0h ('%c')", test_packets[i], test_packets[i]);
             tx_data  = test_packets[i];
             tx_start = 1;
